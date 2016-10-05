@@ -16,10 +16,10 @@ module.exports = {
       }
     }
 
-    function failed(res){
-      throw new Error(res.data.message);
+    function failed(error){
+      throw new Error(error.response.data.message);
     }
 
-    return axios.get(requestUrl).then(success, failed);
+    return axios.get(requestUrl).then(success).catch(failed);
   }
 }

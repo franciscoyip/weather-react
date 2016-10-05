@@ -22,15 +22,12 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
+    modulesDirectories: [
+      'node_modules',
+      './app/api',
+      './app/components',  
+    ],
     alias: {
-      Main: 'app/components/Main.jsx',
-      Navbar: 'app/components/Navbar.jsx',
-      Weather: 'app/components/Weather.jsx',
-      About: 'app/components/About.jsx',
-      Examples: 'app/components/Examples.jsx',
-      WeatherForm: 'app/components/WeatherForm.jsx',
-      WeatherMessage: 'app/components/WeatherMessage.jsx',
-      openWeatherMap: 'app/api/openWeatherMap.jsx',
       applicationStyles: 'app/styles/main.scss'
     },
     extensions: ['', '.js', '.jsx']
