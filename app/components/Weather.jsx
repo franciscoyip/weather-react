@@ -40,6 +40,12 @@ var Weather = React.createClass({
 
     openWeatherMap.getTemp(location).then(success, failed);
   },
+  componentDidMount: function(){
+    var location = this.props.location.query.location;
+    if(location){
+      this.handleSearch(location);
+    }
+  },
   render: function(){
 
     var {temp, location, isLoading, errorMessage} = this.state;
